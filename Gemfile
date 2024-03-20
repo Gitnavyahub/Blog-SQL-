@@ -65,3 +65,11 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'devise'
+gem 'cancancan'
+gem 'rails-ujs'
+gem 'jquery-rails'
+gem 'sendgrid'
+gem 'dotenv', groups: [:development, :test]
+gem 'pg', '~> 1.5', '>= 1.5.4'

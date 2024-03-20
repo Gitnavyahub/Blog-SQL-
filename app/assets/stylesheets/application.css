@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+ /* Add this to your custom stylesheet (e.g., application.css or application.scss) */
+.bg-indigo {
+    background-color: #b1d8d886; /* Adjust the color code as needed */
+  }
+.bg-light-grey {
+    background-color: rgb(234, 253, 237);
+}
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Set minimum height to 100% of the viewport height */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main {
+    flex: 1; /* Use flex to make the main content take up remaining space */
+  }
+  
+  footer {
+    background-color: #f5baf0;
+    color: #080808;
+    padding: 8px; /* Add padding around the content within the footer */
+    text-align: center;
+    margin-top: auto; /* Use auto margin to push the footer to the bottom */
+  }
+  
+  /* Optionally, you can add styles for links within the footer */
+  footer a {
+    color: #080808;
+    text-decoration: none;
+  }
+  

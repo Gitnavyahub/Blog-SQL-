@@ -1,5 +1,9 @@
 class ArticlesController < ApplicationController
-  http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+  # http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
+  # skip_before_action :verify_authenticity_token, only: [:navya_post]
+  before_action :authenticate_user!
+  load_and_authorize_resource
+
   def index
     @articles = Article.all
   end
@@ -12,8 +16,14 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def navya_post
+    print "navya post"
+  end
+
+
   def create
     @article = Article.new(article_params)
+    @article = current_user.articles.build(article_params)
 
     if @article.save
       redirect_to @article
@@ -41,7 +51,11 @@ class ArticlesController < ApplicationController
     @article.destroy
 
     redirect_to root_path, status: :see_other
+    
+
   end
+    
+
 
   
   private
